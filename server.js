@@ -3,6 +3,11 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 
+
+// v2: log the db host (needs DB_URL)
+const dbHost = new URL(process.env.DB_URL).hostname;
+console.log('db host:', dbHost);
+
 const PORT = Number(process.env.PORT || 4173);
 const HOST = process.env.HOST || '0.0.0.0';
 const APP_ENV = process.env.APP_ENV || 'development';
